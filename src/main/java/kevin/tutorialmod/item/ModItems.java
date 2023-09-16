@@ -19,6 +19,8 @@ public class ModItems {
 
     public static final Item METAL_DETECTOR = registerItem("metal_detector", new MetalDetectorItem(new FabricItemSettings().maxDamage(64)));
 
+    public static final Item TOMATO = registerItem("tomato" , new Item(new FabricItemSettings().food(ModFoodComponents.TOMATO)));
+
     public static void addItemsToItemGroup(FabricItemGroupEntries entries, Item... items){
         for(Item item:items){
             entries.add(item);
@@ -32,6 +34,7 @@ public class ModItems {
     public static void registerModItems(){
         // Note - register() registers an event listener to the modify entries event
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((entries -> addItemsToItemGroup(entries, RUBY, RAW_RUBY)));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((entries -> addItemsToItemGroup(entries, TOMATO)));
     }
 
 }

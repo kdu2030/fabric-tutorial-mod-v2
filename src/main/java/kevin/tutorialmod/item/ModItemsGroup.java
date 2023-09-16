@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 public class ModItemsGroup {
 
     public static final ItemGroup RUBY_GROUP = registerItemGroup("ruby", new ItemStack(ModItems.RUBY), ModItems.RUBY, ModItems.RAW_RUBY, ModBlocks.RUBY_BLOCK, ModBlocks.RAW_RUBY_BLOCK, ModBlocks.RUBY_ORE,
-            ModBlocks.DEEPSLATE_RUBY_ORE, ModBlocks.NETHER_RUBY_ORE, ModBlocks.END_STONE_RUBY_ORE, ModItems.METAL_DETECTOR, ModBlocks.SOUND_BLOCK);
+            ModBlocks.DEEPSLATE_RUBY_ORE, ModBlocks.NETHER_RUBY_ORE, ModBlocks.END_STONE_RUBY_ORE, ModItems.METAL_DETECTOR, ModBlocks.SOUND_BLOCK, ModItems.TOMATO);
 
     public static ItemGroup registerItemGroup(String itemGroupId, ItemStack icon, ItemConvertible... items){
         Identifier id = new Identifier(TutorialMod.MOD_ID, itemGroupId);
