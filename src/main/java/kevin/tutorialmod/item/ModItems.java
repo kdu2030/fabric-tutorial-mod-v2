@@ -5,6 +5,7 @@ import kevin.tutorialmod.item.custom.MetalDetectorItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
@@ -21,6 +22,7 @@ public class ModItems {
 
     public static final Item TOMATO = registerItem("tomato" , new Item(new FabricItemSettings().food(ModFoodComponents.TOMATO)));
 
+    public static final Item COAL_BRIQUETTE = registerItem("coal_briquette", new Item(new FabricItemSettings()));
     public static void addItemsToItemGroup(FabricItemGroupEntries entries, Item... items){
         for(Item item:items){
             entries.add(item);
@@ -35,6 +37,9 @@ public class ModItems {
         // Note - register() registers an event listener to the modify entries event
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((entries -> addItemsToItemGroup(entries, RUBY, RAW_RUBY)));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register((entries -> addItemsToItemGroup(entries, TOMATO)));
+
+        // 200 - Refers to how long the fuel item will burn
+        FuelRegistry.INSTANCE.add(COAL_BRIQUETTE, 200);
     }
 
 }
