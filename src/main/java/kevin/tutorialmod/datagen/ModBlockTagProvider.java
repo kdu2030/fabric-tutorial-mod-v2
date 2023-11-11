@@ -12,6 +12,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
 
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider{
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
