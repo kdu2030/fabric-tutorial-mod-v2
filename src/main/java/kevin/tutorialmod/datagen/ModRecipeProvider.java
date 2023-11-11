@@ -31,7 +31,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY, RecipeCategory.DECORATIONS, ModBlocks.RUBY_BLOCK);
 
         // Criterion - These lines will make the recipe appear in the recipe book when the user has either stone or ruby in their inventory
-        // new Identifier(...) - This will make the recipe have the same name as ModItems.RAW_RUBY
+        // new Identifier(...) - This will make the recipe have the same name as ModItems.RAW_RUBYac
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_RUBY, 1)
                 .pattern("SSS")
                 .pattern("SRS")

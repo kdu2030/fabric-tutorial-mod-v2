@@ -18,7 +18,7 @@ import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
-    protected ModLootTableProvider(FabricDataOutput dataOutput) {
+    public ModLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
 
