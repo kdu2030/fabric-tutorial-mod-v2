@@ -24,7 +24,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        registerSimpleCubeAllModels(blockStateModelGenerator, ModBlocks.RUBY_BLOCK, ModBlocks.SOUND_BLOCK,
+        registerSimpleCubeAllModels(blockStateModelGenerator, ModBlocks.RUBY_BLOCK, ModBlocks.RUBY_ORE, ModBlocks.SOUND_BLOCK,
                 ModBlocks.RAW_RUBY_BLOCK, ModBlocks.DEEPSLATE_RUBY_ORE, ModBlocks.NETHER_RUBY_ORE,
                 ModBlocks.END_STONE_RUBY_ORE);
     }
