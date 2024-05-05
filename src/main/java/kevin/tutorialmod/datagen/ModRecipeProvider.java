@@ -49,13 +49,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RUBY_DOOR)));
 
         // This will create a recipe for wooden fences except with ruby blocks in place of wooden blocks
-        createFenceRecipe(ModBlocks.RUBY_FENCE, Ingredient.ofItems(ModBlocks.RUBY_BLOCK))
-                .criterion(hasItem(ModBlocks.RUBY_BLOCK), conditionsFromItem(ModBlocks.RUBY_BLOCK))
+        createFenceRecipe(ModBlocks.RUBY_FENCE, Ingredient.ofItems(ModItems.RUBY))
+                .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RUBY_FENCE)));
 
-        createFenceGateRecipe(ModBlocks.RUBY_FENCE_GATE, Ingredient.ofItems(ModBlocks.RUBY_BLOCK))
-                .criterion(hasItem(ModBlocks.RUBY_BLOCK), conditionsFromItem(ModBlocks.RUBY_BLOCK))
+        createFenceGateRecipe(ModBlocks.RUBY_FENCE_GATE, Ingredient.ofItems(ModItems.RUBY))
+                .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RUBY_FENCE_GATE)));
     }
