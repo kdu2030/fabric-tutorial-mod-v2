@@ -12,15 +12,14 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
 
-public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider{
+public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 
-    private void addVanillaBlocksToTag(FabricTagProvider<Block>.FabricTagBuilder tagBuilder, TagKey<Block>... vanillaBlockTags){
-        for(TagKey<Block> vanillaBlockTag : vanillaBlockTags){
+    private void addVanillaBlocksToTag(FabricTagProvider<Block>.FabricTagBuilder tagBuilder, TagKey<Block>... vanillaBlockTags) {
+        for (TagKey<Block> vanillaBlockTag : vanillaBlockTags) {
             tagBuilder.forceAddTag(vanillaBlockTag);
         }
     }
@@ -37,11 +36,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider{
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.RAW_RUBY_BLOCK, ModBlocks.RUBY_BLOCK, ModBlocks.RUBY_ORE,
-                ModBlocks.DEEPSLATE_RUBY_ORE, ModBlocks.END_STONE_RUBY_ORE, ModBlocks.NETHER_RUBY_ORE, ModBlocks.SOUND_BLOCK);
+                        ModBlocks.DEEPSLATE_RUBY_ORE, ModBlocks.END_STONE_RUBY_ORE, ModBlocks.NETHER_RUBY_ORE, ModBlocks.SOUND_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.RUBY_BLOCK, ModBlocks.RUBY_ORE, ModBlocks.NETHER_RUBY_ORE,
-                ModBlocks.DEEPSLATE_RUBY_ORE);
+                        ModBlocks.DEEPSLATE_RUBY_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RAW_RUBY_BLOCK);
@@ -49,5 +48,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider{
         // Make only mineable by netherite tools
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.END_STONE_RUBY_ORE);
+
+        getOrCreateTagBuilder(BlockTags.FENCES).add(ModBlocks.RUBY_FENCE, ModBlocks.RUBY_FENCE_GATE, ModBlocks.RUBY_WALL);
     }
 }

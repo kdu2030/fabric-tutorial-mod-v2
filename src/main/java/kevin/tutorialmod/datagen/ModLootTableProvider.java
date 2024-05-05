@@ -22,8 +22,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         super(dataOutput);
     }
 
-    public void createSelfDropLootTables(Block... blocks){
-        for(Block block: blocks){
+    public void createSelfDropLootTables(Block... blocks) {
+        for (Block block : blocks) {
             addDrop(block);
         }
     }
@@ -39,12 +39,17 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        createSelfDropLootTables(ModBlocks.RUBY_BLOCK, ModBlocks.RAW_RUBY_BLOCK, ModBlocks.SOUND_BLOCK);
+        createSelfDropLootTables(ModBlocks.RUBY_BLOCK, ModBlocks.RAW_RUBY_BLOCK,
+                ModBlocks.SOUND_BLOCK, ModBlocks.RUBY_STAIRS, ModBlocks.RUBY_TRAPDOOR, ModBlocks.RUBY_WALL,
+                ModBlocks.RUBY_FENCE, ModBlocks.RUBY_FENCE_GATE, ModBlocks.RUBY_BUTTON, ModBlocks.RUBY_PRESSURE_PLATE);
 
         addDrop(ModBlocks.RUBY_ORE, createOreDrop(ModBlocks.RUBY_ORE, ModItems.RAW_RUBY));
         addDrop(ModBlocks.DEEPSLATE_RUBY_ORE, createOreDrop(ModBlocks.DEEPSLATE_RUBY_ORE, ModItems.RAW_RUBY));
         addDrop(ModBlocks.NETHER_RUBY_ORE, createOreDrop(ModBlocks.NETHER_RUBY_ORE, ModItems.RAW_RUBY));
         addDrop(ModBlocks.END_STONE_RUBY_ORE, createOreDrop(ModBlocks.END_STONE_RUBY_ORE, ModItems.RAW_RUBY));
+
+        addDrop(ModBlocks.RUBY_DOOR, doorDrops(ModBlocks.RUBY_DOOR));
+        addDrop(ModBlocks.RUBY_SLAB, slabDrops(ModBlocks.RUBY_SLAB));
     }
 
 
